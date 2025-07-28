@@ -100,7 +100,7 @@ export default function Home() {
 
   return (
     <div className={`min-h-screen ${isDarkMode ? 'dark' : ''} bg-background p-4`}>
-      <div className="w-[600px] h-[700px] mx-auto space-y-4 md:space-y-8 rounded-lg p-4 md:p-8 bg-card overflow-y-auto border-4 border-black dark:border-white">
+      <div className="w-full max-w-[600px] h-[500px] md:h-[700px] mx-auto space-y-4 md:space-y-8 rounded-lg p-4 md:p-8 bg-card overflow-y-auto border-4 border-black dark:border-white">
         {/* Buttons at the top */}
         <div className="flex justify-between items-center">
           <div className="flex gap-2 md:gap-4">
@@ -131,7 +131,7 @@ export default function Home() {
 
         {/* Initial message when not started */}
         {!isStarted && (
-          <div className="flex items-center justify-center h-full">
+          <div className="flex items-center justify-center" style={{ height: 'calc(100% - 80px)' }}>
             <div className="text-center">
               <h2 className="text-xl md:text-2xl font-bold text-foreground mb-4">Greedy Algorithm Demo</h2>
               <p className="text-base md:text-lg text-foreground mb-6">Click on the Start button to see how greedy algorithm works in interview selection process</p>
@@ -154,11 +154,11 @@ export default function Home() {
 
             {/* Round 1 */}
             {showRound(1) && (
-              <div className="flex items-center gap-6">
-                <div className="w-24 text-right">
+              <div className="flex items-center gap-2 md:gap-6">
+                <div className="w-16 md:w-24 text-right">
                   <span className="text-xs md:text-sm font-medium text-foreground">Round 1</span>
                 </div>
-                <Card className="w-[300px] h-[100px] relative border-4 border-black dark:border-white bg-white dark:bg-gray-800">
+                <Card className="w-[200px] md:w-[300px] h-[60px] md:h-[100px] relative border-4 border-black dark:border-white bg-white dark:bg-gray-800">
                   <CardHeader className="pb-2 md:pb-3">
                     <CardTitle className="text-base md:text-lg"></CardTitle>
                   </CardHeader>
@@ -171,7 +171,7 @@ export default function Home() {
                   </CardContent>
                   
                 </Card>
-                <div className="w-20 text-left">
+                <div className="w-16 md:w-20 text-left">
                   <span className="text-xs md:text-sm font-medium text-foreground">Aptitude</span>
                 </div>
               </div>
@@ -189,11 +189,11 @@ export default function Home() {
 
             {/* Round 2 */}
             {showRound(2) && (
-              <div className="flex items-center gap-6">
-                <div className="w-24 text-right">
+              <div className="flex items-center gap-2 md:gap-6">
+                <div className="w-16 md:w-24 text-right">
                   <span className="text-xs md:text-sm font-medium text-foreground">Round 2</span>
                 </div>
-                <Card className="w-[300px] h-[100px] border-4 border-black dark:border-white bg-white dark:bg-gray-800">
+                <Card className="w-[200px] md:w-[300px] h-[60px] md:h-[100px] border-4 border-black dark:border-white bg-white dark:bg-gray-800">
                   <CardHeader className="pb-2 md:pb-3">
                     <CardTitle className="text-base md:text-lg"></CardTitle>
                   </CardHeader>
@@ -205,7 +205,7 @@ export default function Home() {
                     )}
                   </CardContent>
                 </Card>
-                <div className="w-20 text-left">
+                <div className="w-16 md:w-20 text-left">
                   <span className="text-xs md:text-sm font-medium text-foreground">Technical</span>
                 </div>
               </div>
@@ -223,11 +223,11 @@ export default function Home() {
 
             {/* Round 3 */}
             {showRound(3) && (
-              <div className="flex items-center gap-6">
-                <div className="w-24 text-right">
+              <div className="flex items-center gap-2 md:gap-6">
+                <div className="w-16 md:w-24 text-right">
                   <span className="text-xs md:text-sm font-medium text-foreground">Round 3</span>
                 </div>
-                <Card className="w-[300px] h-[100px] border-4 border-black dark:border-white bg-white dark:bg-gray-800">
+                <Card className="w-[200px] md:w-[300px] h-[60px] md:h-[100px] border-4 border-black dark:border-white bg-white dark:bg-gray-800">
                   <CardHeader className="pb-2 md:pb-3">
                     <CardTitle className="text-base md:text-lg"></CardTitle>
                   </CardHeader>
@@ -239,7 +239,7 @@ export default function Home() {
                     )}
                   </CardContent>
                 </Card>
-                <div className="w-20 text-left">
+                <div className="w-16 md:w-20 text-left">
                   <span className="text-xs md:text-sm font-medium text-foreground">HR</span>
                 </div>
               </div>
