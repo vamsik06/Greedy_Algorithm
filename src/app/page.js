@@ -170,12 +170,7 @@ export default function Home() {
                     )}
                   </CardContent>
                   {/* Arrow going to corner for 75 students */}
-                  {showStudentFlow && (
-                    <div className="absolute -right-16 -top-8 flex items-center">
-                      <div className="text-xs font-medium text-foreground mr-2">75 Students are Out</div>
-                      <div className="text-lg">↗</div>
-                    </div>
-                  )}
+                 
                 </Card>
                 <div className="w-20 text-left">
                   <span className="text-sm font-medium text-foreground">Aptitude</span>
@@ -255,8 +250,8 @@ export default function Home() {
             {showSelectedStudents && showRound(3) && (
               <div className="flex flex-col items-center mt-0">
                 <div className="text-2xl">↓</div>
-                <div className="text-sm font-medium text-foreground mt-1">
-                  3 are Selected
+                <div className="text-sm font-medium text-green-600 dark:text-green-400 mt-1">
+                  3 final selects!
                 </div>
               </div>
             )}
