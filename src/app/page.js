@@ -99,30 +99,30 @@ export default function Home() {
   }, [currentRound, isAutoProgressing]);
 
   return (
-    <div className={`max-h-600 min-h-600 ${isDarkMode ? 'dark' : ''} bg-background min-w-600 `}>
-      <div className="w-[729.3px] h-[700px]  space-y-8 border-4 border-black dark:border-white rounded-lg p-3 bg-card overflow-y-auto">
+    <div className={`min-h-screen ${isDarkMode ? 'dark' : ''} bg-background p-4`}>
+      <div className="w-[600px] h-[700px] mx-auto space-y-4 md:space-y-8 rounded-lg p-4 md:p-8 bg-card overflow-y-auto border-4 border-black dark:border-white">
         {/* Buttons at the top */}
         <div className="flex justify-between items-center">
-          <div className="flex gap-4">
-            <Button size="lg" className="px-8" onClick={handleStart} disabled={isStarted}>
+          <div className="flex gap-2 md:gap-4">
+            <Button size="sm" className="px-4 md:px-8" onClick={handleStart} disabled={isStarted}>
               Start
             </Button>
-            <Button size="lg" variant="outline" className="px-8" onClick={handleReset}>
+            <Button size="sm" variant="outline" className="px-4 md:px-8" onClick={handleReset}>
               Reset
             </Button>
           </div>
           <Button
             variant="outline"
-            size="lg"
+            size="sm"
             onClick={toggleDarkMode}
-            className="rounded-full w-12 h-12 p-0 border-2 border-foreground/20 hover:border-foreground/40"
+            className="rounded-full w-10 h-10 md:w-12 md:h-12 p-0 border-2 border-foreground/20 hover:border-foreground/40"
           >
             {isDarkMode ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
               </svg>
             ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
               </svg>
             )}
@@ -131,10 +131,10 @@ export default function Home() {
 
         {/* Initial message when not started */}
         {!isStarted && (
-          <div className="flex-1 flex items-center justify-center">
+          <div className="flex items-center justify-center h-full">
             <div className="text-center">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Greedy Algorithm Demo</h2>
-              <p className="text-lg text-foreground mb-6">Click on the Start button to see how greedy algorithm works in interview selection process</p>
+              <h2 className="text-xl md:text-2xl font-bold text-foreground mb-4">Greedy Algorithm Demo</h2>
+              <p className="text-base md:text-lg text-foreground mb-6">Click on the Start button to see how greedy algorithm works in interview selection process</p>
             </div>
           </div>
         )}
@@ -145,10 +145,10 @@ export default function Home() {
             {/* Arrow and label above Round 1 */}
             {showArrow && (
               <div className="flex flex-col items-center mb-0">
-                <div className="text-sm font-medium text-foreground mb-0">
+                <div className="text-xs md:text-sm font-medium text-foreground mb-0 text-center">
                   Passing 100 Students
                 </div>
-                <div className="text-2xl">↓</div>
+                <div className="text-xl md:text-2xl">↓</div>
               </div>
             )}
 
@@ -156,24 +156,23 @@ export default function Home() {
             {showRound(1) && (
               <div className="flex items-center gap-6">
                 <div className="w-24 text-right">
-                  <span className="text-sm font-medium text-foreground">Round 1</span>
+                  <span className="text-xs md:text-sm font-medium text-foreground">Round 1</span>
                 </div>
                 <Card className="w-[300px] h-[100px] relative border-4 border-black dark:border-white bg-white dark:bg-gray-800">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg"></CardTitle>
+                  <CardHeader className="pb-2 md:pb-3">
+                    <CardTitle className="text-base md:text-lg"></CardTitle>
                   </CardHeader>
                   <CardContent>
                     {showTopStudents && (
-                      <div className="text-center text-sm font-medium text-foreground">
+                      <div className="text-center text-xs md:text-sm font-medium text-foreground">
                         Picking Top 25 Students
                       </div>
                     )}
                   </CardContent>
-                  {/* Arrow going to corner for 75 students */}
-                 
+                  
                 </Card>
                 <div className="w-20 text-left">
-                  <span className="text-sm font-medium text-foreground">Aptitude</span>
+                  <span className="text-xs md:text-sm font-medium text-foreground">Aptitude</span>
                 </div>
               </div>
             )}
@@ -181,10 +180,10 @@ export default function Home() {
             {/* Arrow from Round 1 to Round 2 */}
             {showStudentFlow && showRound(2) && (
               <div className="flex flex-col items-center mb-0">
-                <div className="text-sm font-medium text-foreground mb-0">
+                <div className="text-xs md:text-sm font-medium text-foreground mb-0 text-center">
                   Passing 25 Students
                 </div>
-                <div className="text-2xl">↓</div>
+                <div className="text-xl md:text-2xl">↓</div>
               </div>
             )}
 
@@ -192,22 +191,22 @@ export default function Home() {
             {showRound(2) && (
               <div className="flex items-center gap-6">
                 <div className="w-24 text-right">
-                  <span className="text-sm font-medium text-foreground">Round 2</span>
+                  <span className="text-xs md:text-sm font-medium text-foreground">Round 2</span>
                 </div>
                 <Card className="w-[300px] h-[100px] border-4 border-black dark:border-white bg-white dark:bg-gray-800">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg"></CardTitle>
+                  <CardHeader className="pb-2 md:pb-3">
+                    <CardTitle className="text-base md:text-lg"></CardTitle>
                   </CardHeader>
                   <CardContent>
                     {showBestStudents && (
-                      <div className="text-center text-sm font-medium text-foreground">
+                      <div className="text-center text-xs md:text-sm font-medium text-foreground">
                         Picking Best 5 Students
                       </div>
                     )}
                   </CardContent>
                 </Card>
                 <div className="w-20 text-left">
-                  <span className="text-sm font-medium text-foreground">Technical</span>
+                  <span className="text-xs md:text-sm font-medium text-foreground">Technical</span>
                 </div>
               </div>
             )}
@@ -215,10 +214,10 @@ export default function Home() {
             {/* Arrow from Round 2 to Round 3 */}
             {showFinalArrow && showRound(3) && (
               <div className="flex flex-col items-center mb-0">
-                <div className="text-sm font-medium text-foreground mb-0">
+                <div className="text-xs md:text-sm font-medium text-foreground mb-0 text-center">
                   Passing 5 Students
                 </div>
-                <div className="text-2xl">↓</div>
+                <div className="text-xl md:text-2xl">↓</div>
               </div>
             )}
 
@@ -226,22 +225,22 @@ export default function Home() {
             {showRound(3) && (
               <div className="flex items-center gap-6">
                 <div className="w-24 text-right">
-                  <span className="text-sm font-medium text-foreground">Round 3</span>
+                  <span className="text-xs md:text-sm font-medium text-foreground">Round 3</span>
                 </div>
                 <Card className="w-[300px] h-[100px] border-4 border-black dark:border-white bg-white dark:bg-gray-800">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg"></CardTitle>
+                  <CardHeader className="pb-2 md:pb-3">
+                    <CardTitle className="text-base md:text-lg"></CardTitle>
                   </CardHeader>
                   <CardContent>
                     {showFinalStudents && (
-                      <div className="text-center text-sm font-medium text-foreground">
+                      <div className="text-center text-xs md:text-sm font-medium text-foreground">
                         Picking Best 3 Students
                       </div>
                     )}
                   </CardContent>
                 </Card>
                 <div className="w-20 text-left">
-                  <span className="text-sm font-medium text-foreground">HR</span>
+                  <span className="text-xs md:text-sm font-medium text-foreground">HR</span>
                 </div>
               </div>
             )}
@@ -249,8 +248,8 @@ export default function Home() {
             {/* Selected Students below Round 3 */}
             {showSelectedStudents && showRound(3) && (
               <div className="flex flex-col items-center mt-0">
-                <div className="text-2xl">↓</div>
-                <div className="text-sm font-medium text-green-600 dark:text-green-400 mt-1">
+                <div className="text-xl md:text-2xl">↓</div>
+                <div className="text-xs md:text-sm font-medium text-green-600 dark:text-green-400 mt-1">
                   3 final selects!
                 </div>
               </div>
